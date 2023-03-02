@@ -1,13 +1,20 @@
-import static org.testng.Assert.ARRAY_MISMATCH_TEMPLATE;
 
-import org.checkerframework.common.reflection.qual.GetMethod;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 import org.testng.Reporter;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+
 public class hgbj  implements ITestListener{
 
+	
+	 ExtentReports repoter;
+	           ExtentTest test;
+	           
+	
+	
 	@Override
 	public void onTestStart(ITestResult result) {
 
@@ -17,7 +24,8 @@ public class hgbj  implements ITestListener{
 
 	@Override
 	public void onTestSuccess(ITestResult result) {
-		result
+		result.getMethod().getMethodName();
+		
 	}
 
 	@Override

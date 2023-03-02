@@ -5,11 +5,11 @@
     <classes>
       <class name="CartModule.CartTest">
         <methods>
-          <include name="DeleteItem"/>
           <include name="bmConfigration"/>
           <include name="asConfigration"/>
           <include name="amConfigration"/>
           <include name="acConfigration"/>
+          <include name="AddToCart"/>
           <include name="bsConfigration"/>
           <include name="bcConfigration"/>
         </methods>
