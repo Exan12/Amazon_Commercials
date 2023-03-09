@@ -59,6 +59,18 @@ public class CartPage {
 		return DeleteBtn;
 	}
 	
+	public List<WebElement> getAllMobiles() {
+		return AllMobiles;
+	}
+
+	public WebElement getCartButton() {
+		return CartButton;
+	}
+
+	public WebElement getIphone12() {
+		return Iphone12;
+	}
+	
 // BUSINESS LIBRARY LOGICS
 	
 	/**
@@ -89,6 +101,11 @@ public class CartPage {
 		
 	}
 	
+	/**
+	 * This Method is used to Delete the Product From the Cart
+	 * @param driver
+	 * @param ItemName
+	 */
 	public void DeleteItemInCart(WebDriver driver,String ItemName)
 	{
 		WebDriverLibrary wLib = new WebDriverLibrary();
