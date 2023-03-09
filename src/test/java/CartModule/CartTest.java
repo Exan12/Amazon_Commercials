@@ -19,12 +19,26 @@ public class CartTest extends BaseClass {
 	}
 	
 	@Test
-	public void DeleteItem() throws Throwable
+	public void DeleteItem()
 	{
 
 		CartPage cp = new CartPage(driver);
 		cp.DeleteItemInCart(driver,"iphone 12");
 	}
 	
-
+	@Test
+	public void FirstItem() throws Throwable
+	{
+		CartPage cp = new CartPage(driver);
+		String PRODUCT = pLib.getpropertyfile("product");
+		cp.ClickOnFirstItem(driver, PRODUCT);
+	}
+	
+	@Test
+	public void DeleteAddedFirstItem() throws Throwable
+	{
+		CartPage cp = new CartPage(driver);
+		String PRODUCT = pLib.getpropertyfile("product");
+		cp.DeleteFirstItem(driver, PRODUCT);
+	}
 }

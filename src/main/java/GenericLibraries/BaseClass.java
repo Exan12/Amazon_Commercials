@@ -1,13 +1,11 @@
 package GenericLibraries;
 
 import org.openqa.selenium.By;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -35,7 +33,7 @@ public class BaseClass {
 	@BeforeSuite
 	public void bsConfigration()
 	{
-		Reporter.log("- - - DataBase Connected Succesfully - - -",true);
+		// Reporter.log("- - - DataBase Connected Succesfully - - -",true);
 	}
 	
 	@BeforeClass
@@ -105,6 +103,6 @@ public class BaseClass {
 	@AfterSuite
 	public void asConfigration()
 	{
-		Reporter.log("- - - DataBase Closed Succesfully - - - ");
+		// Reporter.log("- - - DataBase Closed Succesfully - - - ");
 	}
 }

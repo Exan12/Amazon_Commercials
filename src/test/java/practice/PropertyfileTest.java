@@ -19,6 +19,9 @@ public class PropertyfileTest {
 		
 		String PASSWORD = pLib.getpropertyfile("password");
 		System.out.println(PASSWORD);
+		
+		String PRODUCT = pLib.getpropertyfile("product");
+		System.out.println(PRODUCT);
 	}
 
 }

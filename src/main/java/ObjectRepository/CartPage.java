@@ -1,6 +1,7 @@
 package ObjectRepository;
 
 import java.util.List;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -35,6 +36,11 @@ public class CartPage {
 	
 	@FindBy(xpath = "//span[@class='a-size-medium a-color-base a-text-normal']"
 			+ "[normalize-space()='Apple iPhone 12 (128GB) - White']") private WebElement Iphone12;
+	
+	@FindBy(xpath = "/html[1]/body[1]/div[1]/div[2]/div[1]/div[1]/div[1]/span[1]/div[1]"
+			+ "/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/h2[1]/a[1]/span[1]")
+	private WebElement firstElement;
+	
 	
 	// Iniatialization
 	public CartPage(WebDriver driver)
@@ -122,6 +128,7 @@ public class CartPage {
 		}
 		wLib.switchToWindow(driver, "Galaxy");
 		System.out.println("Switch to Galaxy Page");
+		
 		AddToCartBtn.click();
 		wLib.switchToWindow(driver, "cart");
 		CartButton.click();
@@ -130,4 +137,45 @@ public class CartPage {
 		System.out.println("Deleted Item Succesfully ");
 	}
 	
+	/**
+	 * This Method is used to click on the First Item of the Product
+	 * @param driver
+	 * @param PRODUCT
+	 * @throws Throwable
+	 */
+	public void ClickOnFirstItem(WebDriver driver,String PRODUCT) throws Throwable
+	{
+		WebDriverLibrary wLib = new WebDriverLibrary();
+		SearchTextbox.sendKeys(PRODUCT);
+		SearchBtn.click();
+		firstElement.click();
+		wLib.switchToWindow(driver, "keywords");
+		System.out.println("Switched to "+PRODUCT+" Page");
+		AddToCartBtn.click();
+		wLib.switchToWindow(driver, "cart");
+		CartButton.click();
+		System.out.println("Item Added to cart Suceesfully");
+	}
+	
+	/**
+	 * This Method is used to Delete the First Item Added
+	 * @param driver
+	 * @param PRODUCT
+	 * @throws Throwable
+	 */
+	public void DeleteFirstItem(WebDriver driver,String PRODUCT) throws Throwable
+	{
+		WebDriverLibrary wLib = new WebDriverLibrary();
+		SearchTextbox.sendKeys(PRODUCT);
+		SearchBtn.click();
+		firstElement.click();
+		wLib.switchToWindow(driver, "keywords");
+		System.out.println("Switched to "+PRODUCT+" Page");
+		AddToCartBtn.click();
+		wLib.switchToWindow(driver, "cart");
+		CartButton.click();
+		System.out.println("Item Added to cart Suceesfully");
+		DeleteBtn.click();
+		System.out.println("Deleted Item Succesfully ");
+	}
 }
